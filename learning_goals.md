@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
+\f3\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa427\partightenfactor0
+
+\f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
+Learning Goals: Internship at Focus Bear
+\f1\b0 \
+\pard\pardeftab720\sa397\partightenfactor0
+
+\f0\b \cf2 What do I hope to learn from this internship?
+\f1\b0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f2 \cf2 I looking to build a strong foundation for a full-stack career, with a slender toward backend as well as cloud development. This internship is my opening real exposure to a professional software environment, and I want to finish with more than just technical skills. I want to know how real products are made, maintained, plus improved over time.
+\f1 \
+
+\f2 Specifically, I hope to learn:
+\f1 \
+\pard\pardeftab720\li960\fi-960\partightenfactor0
+
+\f2 \cf2 \'95
+\f3 \'a0\'a0\'a0 
+\f2 How a production codebase is structured besides how to navigate while contributing to it confidently
+\f1 \
+
+\f2 \'95
+\f3 \'a0\'a0\'a0 
+\f2 How backend systems besides APIs are designed as well as built
+\f1 \
+
+\f2 \'95
+\f3 \'a0\'a0\'a0 
+\f2 How cloud infrastructure adds into a modern software product
+\f1 \
+
+\f2 \'95
+\f3 \'a0\'a0\'a0 
+\f2 How to write clean, production-quality code that assembles professional standards, not just code that works, but also that is readable, maintainable, while being well-structured
+\f1 \
+\pard\pardeftab720\sa397\partightenfactor0
+
+\f0\b \cf2 What skills am I most excited to develop?
+\f1\b0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f2 \cf2 I am most eager to mature my backend and cloud skills. Considerate how data flows finished a system, from the database to the API to the frontend, is something I am excited to get hands-on experience with.
+\f1 \
+
+\f2 I am also eager to develop my capability to work within a real codebase. University projects are made from scratch, so this is my first chance to read, understand, plus contribute to existing code written by a team, which is a totally altered skill set.
+\f1 \
+\pard\pardeftab720\sa397\partightenfactor0
+
+\f0\b \cf2 What do I think I can contribute to the team?
+\f1\b0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f2 \cf2 I bring a great frontend perspective besides a genuine user empathy, having gone across the Focus Bear onboarding as a first-time user, I can see UX friction points that developers who are close to the product might oversee. I am also detail-oriented, consistent, plus reliable with documentation besides structured tasks, which I hope adds value through the onboarding phase besides beyond.
+\f1 \
+\pard\pardeftab720\sa397\partightenfactor0
+
+\f0\b \cf2 What is one area I feel less confident in that I'd like to improve?
+\f1\b0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f2 \cf2 I feel slightest confident in writing production-quality code. I am aware on how to make things work, but I am alert that professional code desires to be clean, well-tested, then easy for others to read plus build on. I want to progress my sympathetic of code structure, naming conventions, testing practices, what is more how to get positive feedback over code reviews.
+\f1 \
+
+\f2 I also want to advance my learning of databases, APIs, besides cloud services, as these are areas I have incomplete hands-on experience with outdoor of coursework.
+\f1 \
+\pard\pardeftab720\sa397\partightenfactor0
+
+\f0\b \cf2 What does success in this internship look like for me?
+\f1\b0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f2 \cf2 Success looks like finishing this internship with the sureness to apply for junior full-stack or backend roles then frankly mean it. That means being able to point to real offerings I made to a production product, understanding how the Focus Bear codebase works end-to-end, what is more having developed habits around writing clean code plus working in a professional Git workflow.
+\f1 \
+\pard\pardeftab720\fi960\sa320\partightenfactor0
+
+\f2 \cf2 \'a0
+\f1 \
+\pard\pardeftab720\sl368\sa213\partightenfactor0
+\cf2 \'a0\
+}

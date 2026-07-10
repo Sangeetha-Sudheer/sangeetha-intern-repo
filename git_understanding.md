@@ -37,3 +37,15 @@ Clear commit messages make it easier for team members to recognise project histo
 How can poor commit messages cause issues later?
 Poor commit messages such as "fixed stuff" or "update" make it challenging to know what was changed. This slows debugging, code reviews, plus future upholding as developers must review the code in its place of sympathetic the history from the commit messages.
 
+
+Git Bisect Reflection
+
+What does git bisect do?
+Git bisect is a debugging tool that practises binary search to recognise the commit that introduced a bug. In its place of checking every commit manually, Git automatically tapers down the search.
+
+When would you use it in a real-world debugging situation?
+I would custom git bisect when a project that previously worked starts failing after many commits. It helps quickly identify the exact commit that introduced the problem.
+
+How does it compare to manually reviewing commits?
+Git bisect is considerably faster plus more able because it performs a binary search through the commit history. Manual checking becomes slow plus difficult in projects with various commits.
+

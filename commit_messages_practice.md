@@ -5,3 +5,6 @@ This file was generated to practise writing diverse styles of Git commit message
 Example:
 This section was added to demonstrate extra commit style.
 
+Best Practice:
+Good commit messages should clearly describe what changed.
+

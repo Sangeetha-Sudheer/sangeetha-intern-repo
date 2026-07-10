@@ -25,3 +25,15 @@ A good Pull Request has a pure title, a short description of the changes, small,
 What did you learn from reviewing an open-source Pull Request?
 I studied that code assessments include more than examination whether code works. Reviewers argue design decisions, coding style, readability, testing, along with potential improvements earlier positive changes. This collaborative process benefits uphold high-quality software.
 
+
+Writing Meaningful Commit Messages
+
+What makes a good commit message?
+A good commit message is short, clear, then describes what was changed. It should focus on the purpose of the change rather than explaining every implementation detail.
+
+How does a clear commit message help in team collaboration?
+Clear commit messages make it easier for team members to recognise project history, review changes, identify bugs, besides track the purpose of each commit.
+
+How can poor commit messages cause issues later?
+Poor commit messages such as "fixed stuff" or "update" make it challenging to know what was changed. This slows debugging, code reviews, plus future upholding as developers must review the code in its place of sympathetic the history from the commit messages.
+

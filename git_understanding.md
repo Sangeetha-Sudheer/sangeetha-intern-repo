@@ -49,3 +49,19 @@ I would custom git bisect when a project that previously worked starts failing a
 How does it compare to manually reviewing commits?
 Git bisect is considerably faster plus more able because it performs a binary search through the commit history. Manual checking becomes slow plus difficult in projects with various commits.
 
+
+Advanced Git Commands Reflection
+
+What does each command do?
+
+**git checkout <branch> -- <file>** reestablishes a file from another branch or commit.
+ **git cherry-pick <commit>** concerns a specific commit from another branch minus merging the whole branch.
+**git log** exhibits the commit history of the repository.
+**git blame <file>** illustrates which commit and author last modified separately line in a file.
+
+When would you use these commands in a real project?
+These commands are suitable when working with numerous developers. I can reestablish unintentionally modified files, copy a useful commit between branches, inspect project history, besides identify who made explicit code changes.
+
+What surprised you while testing these commands?
+I discovered `git cherry-pick` especially useful since it allows moving one one commit in its place of integration an entire branch. I also start `git blame` cooperative for understanding the history of specific lines of code.
+

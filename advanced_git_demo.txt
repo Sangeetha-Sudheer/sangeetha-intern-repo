@@ -1,1 +1,3 @@
 Git advanced commands practice
+
+Cherry-pick example

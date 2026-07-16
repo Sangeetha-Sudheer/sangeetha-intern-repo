@@ -40,3 +40,64 @@ Why is this better?
 - Informal to understand.
 - Simpler to maintain then encompass.
 
+Naming Variables and Functions
+
+Best Practices:
+Good variable plus function names should:
+- Obviously define their commitment.
+- Use full plus meaningful words instead of unclear abbreviations.
+- Track the naming conventions of the programming language.
+- Custom verbs for functions as functions perform actions.
+- Use nouns for variables as variables store information.
+- Evade names such as `x`, `data`, `temp`, or `stuff` unless their sense is obvious.
+- Continue to be consistent during the project.
+
+Example of Unclear Naming:
+
+```python
+def calc(a, b):
+    c = a * b
+    return c
+
+
+x = 10
+y = 5
+z = calc(x, y)
+
+print(z)
+```
+
+Problems with this code:
+- The function name `calc` does not clarify what calculation is carried out.
+- The parameters `a` and `b` do not describe what they signify.
+- The variables `x`, `y`, and `z` do not communicate their purpose.
+- Additional developer would need to review the function judiciously to understand the code.
+
+Refactored Version:
+```python
+def calculate_rectangle_area(length, width):
+    area = length * width
+    return area
+
+
+rectangle_length = 10
+rectangle_width = 5
+rectangle_area = calculate_rectangle_area(
+    rectangle_length,
+    rectangle_width
+)
+
+print(rectangle_area)
+```
+
+Reflection:
+
+What makes a good variable or function name?
+A good name obviously transfers the determination of the variable or function. Variable names must describe the information actuality stored, while function names should define the action being performed. Names need to be specific, readable, besides reliable with the project's naming conventions.
+
+What issues can arise from poorly named variables?
+Inadequately named variables can make code demanding to understand, debug, review, besides maintain. Developers may misinterpret the purpose of a value or unintentionally use it erroneously. This can growth the likelihood of bugs and make future changes take longer.
+
+How did refactoring improve code readability?
+The refactored version kinds the determination of every value then operation clear. The name `calculate_rectangle_area` directly explains what the function does, though names such as `rectangle_length`, `rectangle_width`, plus `rectangle_area` obviously describe the saved values. The code can now be unspoken exclusive of requiring additional comments.
+

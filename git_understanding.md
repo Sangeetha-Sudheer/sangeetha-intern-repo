@@ -65,3 +65,29 @@ These commands are suitable when working with numerous developers. I can reestab
 What surprised you while testing these commands?
 I discovered `git cherry-pick` especially useful since it allows moving one one commit in its place of integration an entire branch. I also start `git blame` cooperative for understanding the history of specific lines of code.
 
+Summary
+
+This Pull Request proves Git branching plus teamwork practices as part of the Focus Bear onboarding tasks.
+
+Changes:
+
+1.	Added a branching practice file.
+2.	Established creating along with working on a feature branch.
+3.	Verified that transformations were remote from the main branch.
+4.	Additional a reflection about branching besides team collaboration to `git_understanding.md`.
+
+Purpose:
+
+This PR was shaped to whole the Branching & Team Collaboration onboarding exercise plus progress my understanding of feature branches besides collaborative Git workflows.
+
+
+Git Concept: Staging vs. Committing
+
+Difference Between Staging and Committing
+Staging is the process of choosing which alterations will be encompassed in the next commit. A commit forever records the staged changes in the Git history with a commit message.
+
+Why does Git separate these two steps?
+Parting staging from promising agrees developers to wisely choose which alterations fit together. This helps make smaller, more expressive commits besides avoids containing unfinished work.
+When would you stage changes without committing?
+I would stage modifications when revising my work before making a commit or when I only want to pledge specific files while continuing to work on others.
+

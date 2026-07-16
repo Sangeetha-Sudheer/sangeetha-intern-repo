@@ -101,3 +101,69 @@ Inadequately named variables can make code demanding to understand, debug, revie
 How did refactoring improve code readability?
 The refactored version kinds the determination of every value then operation clear. The name `calculate_rectangle_area` directly explains what the function does, though names such as `rectangle_length`, `rectangle_width`, plus `rectangle_area` obviously describe the saved values. The code can now be unspoken exclusive of requiring additional comments.
 
+Writing Small, Focused Functions:
+
+Best Practices:
+Small functions should:
+- Complete one clear task only.
+- Have expressive names.
+- Be easy to test independently.
+- Avoid unnecessary complexity.
+- Be returnable in changed parts of the program.
+
+Example of a Large Function:
+```python
+def process_order(customer, items):
+    total = 0
+    for item in items:
+        total += item["price"]
+    print("Customer:", customer)
+    print("Items:", len(items))
+    print("Total:", total)
+    if total > 100:
+        discount = total * 0.1
+        total -= discount
+    print("Final Price:", total)
+```
+
+Problems:
+
+- Calculates the total.
+- Prints customer details.
+- Applies discounts.
+- Displays the result.
+
+It performs numerous diverse responsibilities, making it tougher to test plus maintain.
+
+Refactored Version:
+```python
+def calculate_total(items):
+    return sum(item["price"] for item in items)
+
+
+def apply_discount(total):
+    if total > 100:
+        return total * 0.9
+    return total
+
+
+def display_order(customer, items, total):
+    print("Customer:", customer)
+    print("Items:", len(items))
+    print("Final Price:", total)
+
+
+total = calculate_total(items)
+total = apply_discount(total)
+display_order(customer, items, total)
+```
+
+Reflection:
+
+Why is breaking down functions helpful?
+
+Breaking large functions to smaller ones creates code easier to understand, uphold, test, besides reuse. Each function has one accountability, making debugging much easier.
+
+How did refactoring improve the structure of the code?
+The refactored version splits calculation, discount logic, then display into liberated functions. This improves legibility, decreases complexity, and permits each function to be improved exclusive of distressing the others.
+

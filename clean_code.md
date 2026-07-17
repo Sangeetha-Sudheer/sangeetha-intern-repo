@@ -167,3 +167,43 @@ Breaking large functions to smaller ones creates code easier to understand, upho
 How did refactoring improve the structure of the code?
 The refactored version splits calculation, discount logic, then display into liberated functions. This improves legibility, decreases complexity, and permits each function to be improved exclusive of distressing the others.
 
+Avoiding Code Duplication
+
+DRY Principle:
+The DRY (Don't Repeat Yourself) principle inspires developers to evade writing the similar code numerous times. In its place of duplicating logic, common functionality should be assigned into reusable functions or methods. This marks code simpler to keep, update, plus test.
+
+Example with Duplication:
+```python
+student1_total = student1_math + student1_science + student1_english
+student1_average = student1_total / 3
+
+student2_total = student2_math + student2_science + student2_english
+student2_average = student2_total / 3
+```
+
+The same calculation is repeated for every student.
+
+Refactored Version:
+```python
+def calculate_average(scores):
+    return sum(scores) / len(scores)
+
+student1_average = calculate_average(
+    [student1_math, student1_science, student1_english]
+)
+
+student2_average = calculate_average(
+    [student2_math, student2_science, student2_english]
+)
+```
+
+Now the calculation exists in only one place.
+
+Reflection:
+
+What were the issues with duplicated code?
+Duplicated code creates programs harder to preserve because the equal logic exists in multiple places. If a change is wanted, each copy must be updated, cumulative the chance of mistakes along with inconsistencies.
+
+How did refactoring improve maintainability?
+Moving the repeated logic into a returnable function condensed duplication, better readability, and made coming updates much simpler. If the calculation variations, only one function wants to be adapted.
+

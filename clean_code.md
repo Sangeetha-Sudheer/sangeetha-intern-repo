@@ -167,3 +167,30 @@ Breaking large functions to smaller ones creates code easier to understand, upho
 How did refactoring improve the structure of the code?
 The refactored version splits calculation, discount logic, then display into liberated functions. This improves legibility, decreases complexity, and permits each function to be improved exclusive of distressing the others.
 
+ Commenting & Documentation
+
+Best Practices
+1.	Write comments that tells *why* the code exists, not *what* it does.
+2.	Keep comments up to date when code changes.
+3.	Use expressive function besides variable names to decrease the need for comments.
+4.	File public functions, APIs, besides complex logic.
+
+Example of Poor Comment:
+```python
+# Add 1 to x
+x = x + 1
+
+
+ Commenting & Documentation
+
+Best Practices
+1.	Write comments that tells *why* the code exists, not *what* it does.
+2.	Keep comments up to date when code changes.
+3.	Use expressive function besides variable names to decrease the need for comments.
+4.	File public functions, APIs, besides complex logic.
+
+Example of Poor Comment:
+```python
+# Add 1 to x
+x = x + 1
+

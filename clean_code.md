@@ -194,3 +194,43 @@ Example of Poor Comment:
 # Add 1 to x
 x = x + 1
 
+
+
+---
+
+Avoiding Code Duplication (DRY Principle)
+What is the DRY Principle?
+
+The "Don't Repeat Yourself" (DRY) principle conditions that every piece of knowledge or logic should occur in only one place in the codebase. Resaying the similar code in various locations makes care more hard and surges the likelihood of bugs.
+
+Example
+Before Refactoring
+```python
+numbers1 = [80, 90, 100]
+average1 = sum(numbers1) / len(numbers1)
+
+numbers2 = [70, 85, 95]
+average2 = sum(numbers2) / len(numbers2)
+```
+
+After Refactoring
+
+```python
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+numbers1 = [80, 90, 100]
+numbers2 = [70, 85, 95]
+
+average1 = calculate_average(numbers1)
+average2 = calculate_average(numbers2)
+```
+
+Reflection
+
+What were the issues with duplicated code?
+Duplicated code sorts software harder to maintain as the same logic must be updated in numerous places. It also rises the chance of presenting inconsistent behaviour or bugs when one copy is altered but another is not.
+
+How did refactoring improve maintainability?
+Refactoring stimulated the repeated logic into a returnable function. This types the code simpler to read, lessens duplication, recovers consistency, and brands future changes simpler as updates only need to be complete in one location.
+

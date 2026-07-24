@@ -234,3 +234,40 @@ Duplicated code sorts software harder to maintain as the same logic must be upda
 How did refactoring improve maintainability?
 Refactoring stimulated the repeated logic into a returnable function. This types the code simpler to read, lessens duplication, recovers consistency, and brands future changes simpler as updates only need to be complete in one location.
 
+
+---
+
+Handling Errors & Edge Cases
+
+Why Error Handling Matters
+Error handling marks software more dependable by avoiding crashes then ensuring the program replies suitably to unexpected or invalid input. Handling edge cases also improves the user experience and makes the code easier to maintain.
+
+What are Guard Clauses?
+Guard clauses are early checks that directly exit a function when invalid conditions are noticed. They decrease nesting plus make code easier to read.
+
+Example
+Before Refactoring:
+```python
+def divide(a, b):
+    return a / b
+```
+
+This function crashes if `b` is zero.
+After Refactoring:
+```python
+def divide(a, b):
+    if b == 0:
+        raise ValueError("The denominator cannot be zero.")
+
+    return a / b
+```
+
+The function now validates the input before executing the calculation.
+
+Reflection
+What was the issue with the original code?
+The original function assumed all inputs were valid. If the denominator was zero, the program would grow an unexpected exception besides terminate. Alike issues can happen when inputs are missing, invalid, or outside the expected range.
+
+How does handling errors improve reliability?
+Proper error handling marks software stronger by preventing unforeseen failures, offering meaningful error messages, and letting developers or users to classify problems more effortlessly. It also expands maintainability since invalid inputs are handled constantly.
+

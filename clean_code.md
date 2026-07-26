@@ -316,3 +316,57 @@ The original function controlled avoidable nested `if` statements, making the lo
 How did refactoring improve it?
 The refactored version consumptions early returns to shorten the control flow. The code is simpler to understand, involves less nesting, besides is simpler to uphold while producing the similar result.
 
+
+
+4.9
+Writing Unit Tests for Clean Code
+
+Why Are Unit Tests Important?
+Unit tests prove that distinct functions or mechanisms behave as expected. They help developers sense bugs early, confirm code alterations do not present regressions, besides make refactoring safer. Dependable unit tests progress confidence in the codebase plus support long-term maintainability.
+
+Testing Framework
+For Python projects, a common testing framework is **PyTest**. It is extensively used as it has simple syntax, provides full test reports, besides supports fixtures, parameterized tests, plus plugins.
+Example Function
+```python
+def divide(a, b):
+    if b == 0:
+        raise ValueError("The denominator cannot be zero.")
+
+    return a / b
+```
+
+Example Unit Tests
+
+```python
+import pytest
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("The denominator cannot be zero.")
+
+    return a / b
+
+def test_divide_positive_numbers():
+    assert divide(10, 2) == 5
+
+def test_divide_negative_numbers():
+    assert divide(-8, 2) == -4
+
+def test_divide_zero():
+    assert divide(0, 5) == 0
+
+
+def test_divide_by_zero():
+    with pytest.raises(ValueError):
+        divide(10, 0)
+```
+
+These tests verify normal behaviour, edge cases, and error handling.
+
+Reflection
+How do unit tests help keep code clean?
+Unit tests cheer developers to write slighter, engrossed functions that are simpler to test. They also offer confidence once refactoring because any unintentional changes are speedily detected.
+
+What issues did you find while testing?
+Testing highlighted the status of control invalid input, mainly division by zero. Writing tests also strengthened the need to reflect edge cases besides ensure functions answer with clear error messages in its place of failing unpredictably.
+

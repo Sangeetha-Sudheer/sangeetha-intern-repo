@@ -271,3 +271,48 @@ The original function assumed all inputs were valid. If the denominator was zero
 How does handling errors improve reliability?
 Proper error handling marks software stronger by preventing unforeseen failures, offering meaningful error messages, and letting developers or users to classify problems more effortlessly. It also expands maintainability since invalid inputs are handled constantly.
 
+
+Refactoring Code for Simplicity
+
+Common Refactoring Techniques
+Some common refactoring techniques include:
+- Getting repeated code into reusable functions.
+- Renaming variables plus functions to mend readability.
+- Reduction deeply nested `if` statements by means of guard clauses.
+- Breaking large functions into smaller, focused functions.
+- Eliminating duplicate or needless code.
+- Streamlining complex conditional logic.
+
+Example
+Before Refactoring
+
+```python
+def check_discount(age, is_student):
+    if age >= 65:
+        return 20
+    else:
+        if is_student:
+            return 15
+        else:
+            return 0
+```
+
+After Refactoring
+```python
+def check_discount(age, is_student):
+    if age >= 65:
+        return 20
+
+    if is_student:
+        return 15
+
+    return 0
+```
+
+Reflection
+What made the original code complex?
+The original function controlled avoidable nested `if` statements, making the logic harder to read. The extra indentation reduced readability without adding any benefit.
+
+How did refactoring improve it?
+The refactored version consumptions early returns to shorten the control flow. The code is simpler to understand, involves less nesting, besides is simpler to uphold while producing the similar result.
+

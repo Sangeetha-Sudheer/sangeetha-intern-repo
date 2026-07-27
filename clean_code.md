@@ -370,3 +370,47 @@ Unit tests cheer developers to write slighter, engrossed functions that are simp
 What issues did you find while testing?
 Testing highlighted the status of control invalid input, mainly division by zero. Writing tests also strengthened the need to reflect edge cases besides ensure functions answer with clear error messages in its place of failing unpredictably.
 
+
+Code Formatting & Style Guides
+Why Is Consistent Code Style Important?
+Consistent code formatting marks software calmer to read, understand, then preserve. When all developer obeys the same style guide, code assessments become faster, bugs are calmer to classify, plus team collaboration recovers. A reliable style also decreases needless formatting discussions so developers can effort on functionality.
+
+ Airbnb JavaScript Style Guide
+The Airbnb JavaScript Style Guide is one of the maximum widely old coding standards for JavaScript projects. It offers suggestions for:
+- Naming variables and functions obviously.
+- Reliable indentation plus spacing.
+- Using `const` and `let` appropriately.
+- Systematising imports.
+- Writing readable functions plus classes.
+- Following modern JavaScript best practices.
+
+ESLint and Prettier
+ESLint
+ESLint is a static analysis tool that detects coding issues such as:
+- Unused variables.
+- Missing semicolons (depending on configuration).
+- Incorrect variable declarations.
+- Potential bugs.
+- Violations of coding standards.
+
+Prettier
+Prettier automatically formats code by applying consistent:
+
+- Indentation.
+- Line spacing.
+- Bracket placement.
+- Quote style.
+- Line wrapping.
+
+Using ESLint together with Prettier helps maintain a clean and consistent codebase.
+
+Reflection
+Why is code formatting important?
+Codes formatting recovers readability, makes collaboration calmer, and helps uphold a consistent coding standard past a project. Well-formatted code is simpler to review, debug, al well as maintain.
+
+What issues did the linter detect?
+Linters usually detect idle variables, changeable formatting, missing or unnecessary syntax, plus code that does not follow the project's style guide. These warnings help classify problems before the code is complex.
+
+Did formatting make the code easier to read?
+Yes. Constant formatting better readability by creating the code more ordered and predictable. It also reduced visual clutter, permitting the logic of the program to stand out more obviously.
+

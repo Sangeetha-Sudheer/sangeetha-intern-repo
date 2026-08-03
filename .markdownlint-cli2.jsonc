@@ -1,0 +1,14 @@
+{
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD024": false,
+    "MD033": false,
+    "MD041": false
+  },
+  "ignores": [
+    "node_modules/**",
+    "competitive_landscape.md",
+    "learning_goals.md"
+  ]
+}

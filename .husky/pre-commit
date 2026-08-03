@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+echo "Running Markdown lint and spell checks..."
+npm run check

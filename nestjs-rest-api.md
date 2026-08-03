@@ -67,3 +67,16 @@ Using services advances code organization, reassures code reuse, rationalises te
 How does NestJS automatically map request methods (GET, POST, etc.) to handlers?
 NestJS procedures decorators such as `@Get()`, `@Post()`, `@Put()`, plus `@Delete()` to associate HTTP demand methods with controller methods. When a request comes, NestJS routes it to the matching handler mechanically.
 
+Practical Implementation
+
+I created a simple NestJS CRUD API using a `UsersController` and `UsersService`.
+
+The following endpoints were implemented and tested successfully using `curl`:
+
+- GET `/users`
+- GET `/users/:id`
+- POST `/users`
+- PUT `/users/:id`
+- DELETE `/users/:id`
+
+The API started successfully with no compilation errors, and all CRUD operations returned the expected responses during testing.

@@ -1,34 +1,54 @@
 AI Tools for Development
 
-AI Tools I Tried:
-Throughout my development work, I mainly used ChatGPT as my AI coding assistant. I used it to:
-- Appreciate different programming concepts besides software engineering topics.
-- Produce code snippets for Python, Java, C++, as well as Git commands.
-- Debug errors besides understand compiler or runtime issues.
-- Learn Git workflows, plus branching, merging, besides resolving merge conflicts.
-- Get enlightenments of algorithms, data structures, plus backend development concepts.
-- Assist with writing technical documentation plus educating code readability.
+AI Tools I Used
 
-What Worked Well? What Didn't?
-What worked well:
-- ChatGPT assisted me understand unaware concepts rapidly.
-- It made suitable starter code that saved time.
-- It was useful for debugging by illumination error messages then signifying possible fixes.
-- It delivered manifold methods to resolving programming problems.
-- It assisted progress documentation plus code comments.
+For this task I used ChatGPT as my main AI development assistant.
 
-What didn't work well
-- AI-generated code occasionally essential modifications previously it worked properly.
-- It sometimes misunderstood project-specific requirements deprived of sufficient context.
-- Some proposals were not fully well-matched with my project setup or library versions, so I wanted to confirm besides test the solutions myself.
+Example 1 – Code Generation
 
-When Do You Think AI Is Most Useful for Coding?
-I believe AI is most convenient as a learning besides productivity tool rather than a extra for programming knowledge. It is especially valuable for:
-- Knowledge new programming languages, frameworks, besides concepts.
-- Debugging code along with understanding error messages.
-- Making boilerplate code plus repetitive functions.
-- Explanation algorithms plus best practices.
-- Educating documentation plus code readability.
+I asked ChatGPT to help me generate a simple CRUD API using NestJS.
 
-Still, developers should always review, test, what is more understand AI-generated code before spending it in production because correctness then security remain the developer's accountability.
+It explained how controllers and services work together and provided example code for GET, POST, PUT and DELETE endpoints.
 
+This helped me understand the project structure before I implemented it.
+
+Example 2 – Debugging
+
+While creating the NestJS project I received TypeScript errors related to imports and decorators.
+
+I asked ChatGPT to explain the errors and it suggested the correct import statements and how to fix the controller.
+
+After applying the changes, the project compiled successfully.
+
+Example 3 – Learning a New Concept
+
+I asked ChatGPT to explain the difference between a NestJS Controller and a Service.
+
+It explained that controllers handle HTTP requests while services contain the business logic.
+
+This made the architecture much easier to understand.
+
+What Worked Well
+
+- Quick explanations.
+- Helped identify coding mistakes.
+- Generated useful example code.
+- Saved time while debugging.
+
+What Didn't Work Well
+
+Sometimes the generated code needed small adjustments to match my project.
+
+I still needed to test the code and understand the changes instead of copying everything directly.
+
+When AI Is Most Useful
+
+I think AI is most useful when:
+
+- learning a new framework
+- debugging errors
+- generating example code
+- explaining programming concepts
+- improving documentation
+
+Overall, ChatGPT improved my productivity and helped me complete development tasks more efficiently.

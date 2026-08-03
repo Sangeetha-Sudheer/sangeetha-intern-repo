@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB",
+  "useGitignore": true,
+  "ignorePaths": [
+    "node_modules/**",
+    "package-lock.json",
+    "competitive_landscape.md",
+    "learning_goals.md"
+  ],
+  "words": [
+    "API",
+    "APIs",
+    "appdb",
+    "backend",
+    "CSpell",
+    "DTO",
+    "DTOs",
+    "GitHub",
+    "glanceable",
+    "Husky",
+    "JavaScript",
+    "markdownlint",
+    "NestJS",
+    "PostgreSQL",
+    "Prettier",
+    "pytest",
+    "Routinery",
+    "Sangeetha",
+    "Tiimo",
+    "TypeScript"
+  ]
+}

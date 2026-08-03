@@ -1,0 +1,29 @@
+{
+  "name": "sangeetha-intern-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:md": "markdownlint-cli2 ci_cd_reflection.md ci-check-test.md", 
+    "spellcheck": "cspell ci_cd_reflection.md ci-check-test.md --no-progress", 
+    "check": "npm run lint:md && npm run spellcheck",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sangeetha-Sudheer/sangeetha-intern-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sangeetha-Sudheer/sangeetha-intern-repo/issues"
+  },
+  "homepage": "https://github.com/Sangeetha-Sudheer/sangeetha-intern-repo#readme",
+  "devDependencies": {
+    "cspell": "^10.0.1",
+    "husky": "^9.1.7",
+    "markdownlint-cli2": "^0.23.2"
+  }
+}

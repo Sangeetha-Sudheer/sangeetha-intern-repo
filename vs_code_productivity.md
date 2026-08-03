@@ -4,17 +4,17 @@ Top 10 VS Code Keyboard Shortcuts
 
 Navigation:
 Shortcut & Purpose
-`Cmd + P` : Quickly open any file 
-`Cmd + Shift + P` :  Open Command Palette 
-`Ctrl + Tab` :  Switch between open files 
+`Cmd + P` : Quickly open any file
+`Cmd + Shift + P` :  Open Command Palette
+`Ctrl + Tab` :  Switch between open files
 
 Editing:
-Shortcut & Purpose 
-`Option + Click` :  Add multiple cursors 
-`Cmd + D`  Select next occurrence of the selected word 
+Shortcut & Purpose
+`Option + Click` :  Add multiple cursors
+`Cmd + D`  Select next occurrence of the selected word
 `Shift + Option + Down` :  Duplicate current line
-`Option + Up/Down` :  Move a line up or down 
-`Cmd + /` :  Toggle line comment 
+`Option + Up/Down` :  Move a line up or down
+`Cmd + /` :  Toggle line comment
 
 Debugging:
 Shortcut & Purpose
@@ -23,9 +23,8 @@ Shortcut & Purpose
 
 Terminal Commands
 
-Shortcut & Purpose 
+Shortcut & Purpose
 `` Ctrl + ` `` :  Toggle integrated terminal
-
 
 Reflection
 

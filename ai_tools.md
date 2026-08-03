@@ -1,54 +1,31 @@
-AI Tools for Development
+# AI Tools Reflection
 
-AI Tools I Used
+## Which AI tool did you try?
 
-For this task I used ChatGPT as my main AI development assistant.
+I used ChatGPT to help me learn NestJS, generate code examples, and debug errors while completing my internship tasks.
 
-Example 1 – Code Generation
+## What worked well?
 
-I asked ChatGPT to help me generate a simple CRUD API using NestJS.
+ChatGPT explained NestJS concepts clearly and helped me generate example code for controllers and services. It also helped me understand Git commands and fix coding errors more quickly.
 
-It explained how controllers and services work together and provided example code for GET, POST, PUT and DELETE endpoints.
+## What didn't work well?
 
-This helped me understand the project structure before I implemented it.
+Sometimes the generated code needed small changes before it worked in my project. I still had to read the error messages and test the code myself instead of copying everything directly.
 
-Example 2 – Debugging
+## When is AI most useful for coding?
 
-While creating the NestJS project I received TypeScript errors related to imports and decorators.
+AI is most useful when learning a new framework, understanding error messages, generating small code examples, and explaining programming concepts. It saves time, but I still need to test and understand the code before using it.
 
-I asked ChatGPT to explain the errors and it suggested the correct import statements and how to fix the controller.
+## Examples
 
-After applying the changes, the project compiled successfully.
+### Code generation
 
-Example 3 – Learning a New Concept
+I asked ChatGPT to generate a NestJS CRUD controller with GET, POST, PUT, and DELETE endpoints. I compared the example with my own project and modified it to match my service.
 
-I asked ChatGPT to explain the difference between a NestJS Controller and a Service.
+### Debugging
 
-It explained that controllers handle HTTP requests while services contain the business logic.
+While installing NestJS, I received a macOS permission error and the `nest` command was not found. ChatGPT explained that the global installation had failed and suggested using `npx @nestjs/cli new nestjs-crud-demo` instead. This helped me continue without installing the CLI globally.
 
-This made the architecture much easier to understand.
+### Learning a concept
 
-What Worked Well
-
-- Quick explanations.
-- Helped identify coding mistakes.
-- Generated useful example code.
-- Saved time while debugging.
-
-What Didn't Work Well
-
-Sometimes the generated code needed small adjustments to match my project.
-
-I still needed to test the code and understand the changes instead of copying everything directly.
-
-When AI Is Most Useful
-
-I think AI is most useful when:
-
-- learning a new framework
-- debugging errors
-- generating example code
-- explaining programming concepts
-- improving documentation
-
-Overall, ChatGPT improved my productivity and helped me complete development tasks more efficiently.
+I asked ChatGPT to explain the difference between a NestJS controller and a service. The explanation helped me understand that controllers handle HTTP requests while services contain the business logic.

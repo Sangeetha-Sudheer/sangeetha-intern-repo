@@ -1,23 +1,46 @@
 # AI Tools for Development
 
-## Which AI tool did you try?
+## Tool I Used
+ChatGPT
 
-I mainly used ChatGPT during this internship. I used it to understand new concepts, generate example code, and help debug programming problems.
+## Code Snippet Example
+I asked ChatGPT to help me set up a NestJS project. 
+I was getting an npm permission error when trying to 
+install the Nest CLI globally. ChatGPT suggested:
 
-## What worked well?
+npx @nestjs/cli new nestjs-crud-demo
 
-ChatGPT was very helpful for explaining new topics and suggesting code examples. One useful example was when I had trouble creating a NestJS project. I received an npm permission error because the Nest CLI was not installed correctly. ChatGPT explained the problem and suggested using `npx @nestjs/cli new nestjs-crud-demo` instead of installing the CLI globally. This solved the problem and allowed me to continue.
+This worked without needing a global install.
 
-It also helped me understand how NestJS controllers, modules, and services work together before I started writing my CRUD API.
+## Debugging Example
+When the Nest CLI failed, I copied the error message 
+into ChatGPT. It explained that the issue was a 
+permission problem with global npm packages on Mac, 
+and suggested using npx instead. That fixed it 
+straight away.
 
-## What didn't work well?
+## Concept AI Explained to Me
+I asked ChatGPT how NestJS controllers, modules, and 
+services work together. It explained that:
+- A module groups related code together
+- A controller handles incoming requests
+- A service contains the actual business logic
 
-Sometimes the first answer was too general or did not completely solve my problem. I often needed to provide more details or ask follow-up questions before getting the correct solution. I still tested the suggested code myself instead of copying everything directly.
+This helped me understand the structure before I 
+started writing my CRUD API.
 
-## When is AI most useful for coding?
+## What Worked Well
+ChatGPT was fast at explaining new concepts and 
+giving starting-point code examples. It saved me 
+a lot of time when learning NestJS from scratch.
 
-I think AI is most useful when learning a new framework, debugging errors, understanding unfamiliar code, or generating small code examples. It saves time and helps me learn faster, but I still need to understand the code before using it.
+## What Didn't Work Well
+The first answer was sometimes too general. I usually 
+needed to ask follow-up questions with more details 
+to get a useful answer.
 
-## Reflection
-
-Using ChatGPT improved my productivity during this internship. It helped me solve problems more quickly and understand new concepts such as NestJS. I learned that AI is a useful assistant, but it should support my learning rather than replace my own thinking and testing.
+## When I Would Use AI Again
+When learning a new framework, debugging an error 
+message, or understanding unfamiliar code structure. 
+I always test the code myself rather than copying 
+it directly.

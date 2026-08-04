@@ -1,21 +1,53 @@
-# Learning Goals
+# Learning Goals — Internship at Focus Bear
 
-## What do you hope to learn from this internship?
+## What do I hope to learn from this internship?
 
-I hope to improve my backend development skills and learn how professional software is built and maintained. I also want to understand how experienced developers collaborate using Git, pull requests, and code reviews.
+I want to build a strong foundation for a full-stack
+career, leaning toward backend and cloud development.
+I want to understand how real products are built and
+maintained over time, not just complete university
+assignments.
 
-## What skills are you most excited to develop?
+I hope to learn:
+- How a production codebase is structured
+- How backend systems and APIs are designed
+- How cloud infrastructure fits into a software product
+- How to write clean, readable, and maintainable code
 
-I am most excited to develop my skills in NestJS, TypeScript, Git, debugging, and writing clean, maintainable code. I also want to improve my problem-solving and teamwork skills.
+## What skills am I most excited to develop?
 
-## What do you think you can contribute to the team?
+I am most excited to develop my backend and cloud
+skills. I want to understand how data flows through
+a system, from the database to the API to the frontend.
 
-I can contribute by being eager to learn, completing tasks on time, and asking questions when I am unsure. I enjoy solving programming problems and I am always willing to improve based on feedback.
+I am also excited to work inside a real codebase.
+University projects start from scratch, so this is
+my first chance to read and contribute to existing
+code written by a team.
 
-## What is one area you feel less confident in that you'd like to improve?
+## What can I contribute to the team?
 
-I would like to improve my confidence in backend development and understanding larger codebases. I also want to become more comfortable reading and contributing to existing projects.
+I bring a strong eye for user experience. After
+testing the Focus Bear app as a new user, I was able
+to identify several UX issues that developers close
+to the product might miss. I am also detail-oriented
+and consistent with documentation tasks.
 
-## What does success in this internship look like for you?
+## What am I less confident in?
 
-Success for me means completing my assigned tasks well, learning from experienced developers, improving my coding skills, and becoming more confident in working on real software projects.
+I feel least confident in writing production-quality
+code. I know how to make things work, but I want to
+learn how to write code that is clean, well-tested,
+and easy for others to read and build on.
+
+I also want to improve my understanding of databases,
+APIs, and cloud services.
+
+## What does success look like for me?
+
+Success means finishing this internship with the
+confidence to apply for junior backend or full-stack
+roles and genuinely mean it. I want to point to real
+contributions I made to a production product and have
+developed good habits around clean code and Git
+workflows.

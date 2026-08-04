@@ -1,23 +1,23 @@
-# Company Reflection
+# Understanding Focus Bear's Mission and Vision
 
 ## Why do you think Focus Bear was created?
 
-I think Focus Bear was created to help people improve their focus and build healthy daily habits. Many people struggle with distractions, procrastination, and staying productive. The app provides tools that make it easier to stay on track and complete important tasks.
+I think Focus Bear was created to help people stay focused and build better daily habits. Many people struggle with distractions from social media or have trouble managing their time. The app gives them tools to stay productive and create healthy routines.
 
 ## What problem is Focus Bear solving?
 
-Focus Bear helps people reduce distractions and manage their time better. It encourages users to build routines and maintain focus while working or studying. This is especially helpful for people who find it difficult to stay organised.
+Focus Bear helps people reduce distractions and improve their focus. It also helps users build good habits that they can follow every day. This can make it easier to study, work, or complete important tasks.
 
 ## Why do you think this mission is important?
 
-I think this mission is important because many people lose time due to constant notifications and distractions. Better focus can improve learning, work performance, and mental wellbeing. Small daily habits can make a big difference over time.
+I think this mission is important because distractions affect many people today. It is easy to lose time on social media or other websites. Having a tool that encourages better habits can help people achieve their goals and reduce stress.
 
 ## How does Focus Bear's work align with your personal values or interests?
 
-As a software engineering student, I enjoy using technology to solve real problems. I value productivity, continuous learning, and building useful software. Working on a product that helps people develop better habits matches my interests and career goals.
+As a software engineering student, I like using technology to solve real problems. I also enjoy learning about productivity tools that make studying and working easier. I think building software that improves people's daily lives is meaningful.
 
 ## Do you personally relate to any of the challenges that Focus Bear aims to solve?
 
-Yes. As a university student, I sometimes get distracted while studying, especially when using my laptop or phone. During assignment weeks, it can be difficult to stay focused for long periods. I believe tools like Focus Bear could help me build better study habits and reduce distractions.
+Yes. During university, I sometimes lose focus when I study for long hours. I also get distracted by my phone or social media. I try to use a study schedule and take short breaks to stay productive. I think a tool like Focus Bear could help me stay focused for longer.
 
-I also have a friend who often struggles to stay organised and complete tasks on time. A tool like Focus Bear could help them create a routine and stay focused on important work.
+I also know friends at university who find it difficult to stay organised because they become distracted while studying. A tool like Focus Bear could help them build better routines and complete their work on time.

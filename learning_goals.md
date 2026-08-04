@@ -1,4 +1,4 @@
-# Learning Goals — Internship at Focus Bear
+# Learning Goals - Internship at Focus Bear
 
 ## What do I hope to learn from this internship?
 

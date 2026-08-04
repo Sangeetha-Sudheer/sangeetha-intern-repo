@@ -91,3 +91,24 @@ Parting staging from promising agrees developers to wisely choose which alterati
 When would you stage changes without committing?
 I would stage modifications when revising my work before making a commit or when I only want to pledge specific files while continuing to work on others.
 
+## Git Bisect Exercise
+
+### Commands Used
+
+```bash
+git bisect start
+git bisect bad 752c6b8
+git bisect good 923bea4
+```
+
+### Result
+
+Git Bisect identified commit `752c6b8461390953d43f930177829c5484c7aff5` as the first bad commit.
+
+Commit message:
+
+> Introduce bug in multiply function
+
+### Reflection
+
+Using Git Bisect helped me quickly identify the commit that introduced the bug without checking every commit manually. It demonstrated how binary search can efficiently locate the source of a problem in a project's history.

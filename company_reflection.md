@@ -46,3 +46,4 @@ made that period much easier.
 I also have friends at university who struggle to
 stay organised because of distractions. A tool like
 Focus Bear could help them build better routines.
+

@@ -1,89 +1,21 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2867
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
-\f3\froman\fcharset0 TimesNewRomanPSMT;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\sa427\partightenfactor0
+# Learning Goals
 
-\f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
-Learning Goals: Internship at Focus Bear
-\f1\b0 \
-\pard\pardeftab720\sa397\partightenfactor0
+## What do you hope to learn from this internship?
 
-\f0\b \cf2 What do I hope to learn from this internship?
-\f1\b0 \
-\pard\pardeftab720\sa320\partightenfactor0
+I hope to gain practical experience working as a backend developer in a real development environment. At university, I have learned programming and software engineering concepts, but I want to understand how these skills are used in real projects. I also want to become more confident working with an existing codebase and collaborating with other developers.
 
-\f2 \cf2 I looking to build a strong foundation for a full-stack career, with a slender toward backend as well as cloud development. This internship is my opening real exposure to a professional software environment, and I want to finish with more than just technical skills. I want to know how real products are made, maintained, plus improved over time.
-\f1 \
+## What skills are you most excited to develop?
 
-\f2 Specifically, I hope to learn:
-\f1 \
-\pard\pardeftab720\li960\fi-960\partightenfactor0
+I am most excited to improve my backend development skills. I want to become more confident with APIs, databases, testing, debugging, Git, GitHub, and development workflows. I also want to improve my ability to read existing code and understand how different parts of a backend system work together.
 
-\f2 \cf2 \'95
-\f3 \'a0\'a0\'a0 
-\f2 How a production codebase is structured besides how to navigate while contributing to it confidently
-\f1 \
+## What do you think you can contribute to the team?
 
-\f2 \'95
-\f3 \'a0\'a0\'a0 
-\f2 How backend systems besides APIs are designed as well as built
-\f1 \
+I can contribute my programming knowledge, willingness to learn, and ability to work consistently on assigned tasks. I have experience with languages such as Python, Java, C++, and C, and I have worked on university software projects. I am also willing to ask questions, take feedback, and improve my work when something is incorrect.
 
-\f2 \'95
-\f3 \'a0\'a0\'a0 
-\f2 How cloud infrastructure adds into a modern software product
-\f1 \
+## What is one area you feel less confident in that you would like to improve?
 
-\f2 \'95
-\f3 \'a0\'a0\'a0 
-\f2 How to write clean, production-quality code that assembles professional standards, not just code that works, but also that is readable, maintainable, while being well-structured
-\f1 \
-\pard\pardeftab720\sa397\partightenfactor0
+I feel less confident working with large existing codebases because most of my previous projects were university projects that I built from the beginning. I would like to improve my ability to understand unfamiliar code, debug problems, and make changes without affecting other parts of the application.
 
-\f0\b \cf2 What skills am I most excited to develop?
-\f1\b0 \
-\pard\pardeftab720\sa320\partightenfactor0
+## What does success in this internship look like for you?
 
-\f2 \cf2 I am most eager to mature my backend and cloud skills. Considerate how data flows finished a system, from the database to the API to the frontend, is something I am excited to get hands-on experience with.
-\f1 \
-
-\f2 I am also eager to develop my capability to work within a real codebase. University projects are made from scratch, so this is my first chance to read, understand, plus contribute to existing code written by a team, which is a totally altered skill set.
-\f1 \
-\pard\pardeftab720\sa397\partightenfactor0
-
-\f0\b \cf2 What do I think I can contribute to the team?
-\f1\b0 \
-\pard\pardeftab720\sa320\partightenfactor0
-
-\f2 \cf2 I bring a great frontend perspective besides a genuine user empathy, having gone across the Focus Bear onboarding as a first-time user, I can see UX friction points that developers who are close to the product might oversee. I am also detail-oriented, consistent, plus reliable with documentation besides structured tasks, which I hope adds value through the onboarding phase besides beyond.
-\f1 \
-\pard\pardeftab720\sa397\partightenfactor0
-
-\f0\b \cf2 What is one area I feel less confident in that I'd like to improve?
-\f1\b0 \
-\pard\pardeftab720\sa320\partightenfactor0
-
-\f2 \cf2 I feel slightest confident in writing production-quality code. I am aware on how to make things work, but I am alert that professional code desires to be clean, well-tested, then easy for others to read plus build on. I want to progress my sympathetic of code structure, naming conventions, testing practices, what is more how to get positive feedback over code reviews.
-\f1 \
-
-\f2 I also want to advance my learning of databases, APIs, besides cloud services, as these are areas I have incomplete hands-on experience with outdoor of coursework.
-\f1 \
-\pard\pardeftab720\sa397\partightenfactor0
-
-\f0\b \cf2 What does success in this internship look like for me?
-\f1\b0 \
-\pard\pardeftab720\sa320\partightenfactor0
-
-\f2 \cf2 Success looks like finishing this internship with the sureness to apply for junior full-stack or backend roles then frankly mean it. That means being able to point to real offerings I made to a production product, understanding how the Focus Bear codebase works end-to-end, what is more having developed habits around writing clean code plus working in a professional Git workflow.
-\f1 \
-\pard\pardeftab720\fi960\sa320\partightenfactor0
-
-\f2 \cf2 \'a0
-\f1 \
-\pard\pardeftab720\sl368\sa213\partightenfactor0
-\cf2 \'a0\
-}
+Success for me would mean becoming more confident as a software developer and being able to complete real development tasks with less guidance over time. I would also like to improve my Git and GitHub workflow, backend development skills, debugging skills, and ability to contribute effectively to a development team.

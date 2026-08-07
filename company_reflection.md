@@ -1,13 +1,49 @@
-Company Reflection
- 
-1. Why do you think Focus Bear was created?
-I believe Focus Bear was made to benefit people who fight with disruptions, procrastination, besides keeping healthy routines, mainly individuals with ADHD plus Autism. In its place of only tracking habits, the application actively guides users over routines besides blocks distractions to help them stay focused what is more productive. It was also shaped by a team that has lived experience with these tasks, agreeing them to design a solution founded on real needs slightly than expectations.
-2. What problem is Focus Bear solving?
-Focus Bear purposes to resolve the tricky of constant digital distractions besides struggle keeping productive habits. Various people find it interesting to visit focused on significant tasks as of social media, notifications, plus other disruptions. The claim comforts users build planned routines, reduce procrastination, block disturbing websites besides applications, then maintain healthy work habits while avoiding burnout.
-3. Why do you think this mission is important?
-I think this mission is important as productivity is not only about working tougher but also about working in a healthy plus sustainable way. Many people struggle to continue focused while balancing studies, work, besides personal errands. By helping users progress better routines then reduce distractions, Focus Bear cares both productivity besides overall wellbeing. Forming technology that has a positive impact on people's daily lives is somewhat I find expressive.
-4. How does Focus Bear’s work align with your personal values or interests?
-As a Software Engineering student, I love structure technology that cracks practical problems besides improves people's lives. I am mainly interested in backend development plus creating reliable software systems. Focus Bear combines software engineering with a significant social purpose, which powerfully supports with my interest in emerging technology that brings real worth to users. I also gain the company's effort on incessant learning, collaboration, besides innovation.
-5. Do you personally relate to any of the challenges that Focus Bear aims to solve?
-As a university student, I understand how quick it is to become unfocussed while studying or working on projects. Dealing multiple assignments, deadlines, internships, then part-time work requires good organisation plus focus. Although everyone's experiences are unlike, I appreciate the importance of having structured routines besides minimising distractions to stay productive. This is one of the goals I find Focus Bear's mission significant plus motivating.
+# Understanding Focus Bear's Mission and Vision
+
+## Why do you think Focus Bear was created?
+
+Focus Bear was created to help people stay focused
+and build better daily habits. The founder had ADHD
+and found that existing productivity apps did not
+work for him. So he built an app that blocks
+distractions and guides users through routines one
+step at a time.
+
+## What problem is Focus Bear solving?
+
+It solves the problem of distraction and poor daily
+habits. Many people lose time on social media or
+struggle to start tasks. Focus Bear blocks distracting
+apps and helps users follow a morning and evening
+routine every day.
+
+## Why do you think this mission is important?
+
+Distractions are a real problem for students and
+workers today. It is easy to lose hours without
+realising it. A tool that builds better habits can
+help people achieve their goals and feel less stressed.
+
+## How does Focus Bear align with your values?
+
+I enjoy building software that solves real problems
+for real people. Focus Bear does exactly that. It
+uses technology to improve daily life, which is the
+kind of work I want to do as a software engineer.
+
+## Do you personally relate to the challenges
+Focus Bear aims to solve?
+
+Yes. During my final year at Swinburne, I had to
+balance internship work, university assignments, and
+exam preparation at the same time. I often got
+distracted by my phone when I sat down to study.
+I started using a timer and blocking social media
+during study blocks, which helped me stay on track.
+Focus Bear does this automatically, which would have
+made that period much easier.
+
+I also have friends at university who struggle to
+stay organised because of distractions. A tool like
+Focus Bear could help them build better routines.
 

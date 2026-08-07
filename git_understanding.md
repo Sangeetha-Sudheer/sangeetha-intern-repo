@@ -1,51 +1,45 @@
-# Git Bisect Reflection
+# Writing Meaningful Commit Messages
 
-## What does git bisect do?
+## What makes a good commit message?
 
-Git bisect helps find the commit that introduced a bug. It uses a binary search between a known good commit and a known bad commit. Instead of checking every commit manually, Git moves through the commit history and asks me to mark each tested commit as good or bad.
+A good commit message should be clear, concise, and specific. It should explain what was changed without requiring someone to inspect the code first. A meaningful commit message makes the Git history easier to understand and helps developers quickly identify the purpose of a change.
 
-## My Test Scenario
+For example, `Add note about clear commit messages` is better than `fixed stuff` because it clearly describes what was changed.
 
-I created a simple Python file called `bisect_demo.py` with a multiplication function. I had an earlier commit where the multiplication function worked correctly.
+## How does a clear commit message help with team collaboration?
 
-The known good commit was:
+Clear commit messages help team members understand the history of a project. When several developers are working on the same repository, they can look at the Git history and quickly understand what changes were made and why.
 
-`923bea4` - Add working multiplication program
+This is also useful during code reviews and debugging because developers can identify relevant changes without opening every commit.
 
-I later introduced a bug in the multiplication function. The bad commit was:
+## How can poor commit messages cause issues later?
 
-`752c6b8` - Introduce bug in multiply function
+Poor commit messages can make the project history difficult to understand. A vague message such as `fixed stuff` does not explain what was fixed or which part of the project was changed.
 
-I ran:
+Messages that are too detailed can also make the Git history difficult to scan. A good commit message should provide enough information to explain the change while remaining concise.
 
-`git bisect start`
+## Commit Message Practice
 
-Then I marked the bad commit:
+I created three commits to compare different commit message styles.
 
-`git bisect bad 752c6b8`
+### 1. Vague commit message
 
-Then I marked the known working commit:
+`6991a42 fixed stuff`
 
-`git bisect good 923bea4`
+This message is vague because it does not explain what was changed or why the change was made. Someone reading the Git history would need to inspect the commit to understand it.
 
-Git bisect compared the commits and returned:
+### 2. Overly detailed commit message
 
-`752c6b8461390953d43f930177829c5484c7aff5 is the first bad commit`
+`75dcf6d Updated commit message practice file by adding a new sentence explaining that this file is being used to test different Git commit message styles during my internship`
 
-This confirmed that the commit "Introduce bug in multiply function" introduced the problem.
+This message explains the change, but it contains more detail than necessary. It is difficult to scan quickly in the Git history.
 
-After finishing the test, I used:
+### 3. Well-structured commit message
 
-`git bisect reset`
+`2d21d2d Add note about clear commit messages`
 
-to return the repository to its normal state.
+This message is clear and concise. It uses an action word and explains exactly what was added without unnecessary information.
 
-## When would I use git bisect?
+## Reflection
 
-I would use git bisect when something that previously worked suddenly stops working and I do not know which commit caused it. This would be useful in a real project where many changes have been committed and manually checking every commit would take a long time.
-
-## Git Bisect vs Manual Commit Review
-
-Before learning git bisect, I would probably look through commits one by one and try to find where the code changed. This can become slow when there are many commits.
-
-Git bisect is more efficient because it reduces the number of commits that need to be tested. I found it useful because Git was able to identify the exact commit that introduced the bug instead of me manually searching through the whole commit history.
+This exercise showed me that commit messages should balance clarity and conciseness. Vague messages do not provide enough information, while overly detailed messages make the Git history harder to read. A short and descriptive message makes it easier for both me and other developers to understand the purpose of a commit.

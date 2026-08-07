@@ -1,2 +1,3 @@
 Commit message practice
 Testing different Git commit message styles.
+Clear commit messages make Git history easier to understand.

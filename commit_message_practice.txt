@@ -1,1 +1,2 @@
 Commit message practice
+Testing different Git commit message styles.

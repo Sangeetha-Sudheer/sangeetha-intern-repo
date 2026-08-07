@@ -1,93 +1,51 @@
-#what caused conflicts?
-The conflict has occurred as the same section of the file has been modified in both the main branches along with a feature branch before they merged.
+# Git Bisect Reflection
 
+## What does git bisect do?
 
-I created a new branch called 'conflict-test' and line was edited in README.md, then committed it. Then I went to 'main' and edited the *same line* in README.md differently and committed. It flagged a merge conflict when I tried to merge 'conflict-test' into 'main'. 
+Git bisect helps find the commit that introduced a bug. It uses a binary search between a known good commit and a known bad commit. Instead of checking every commit manually, Git moves through the commit history and asks me to mark each tested commit as good or bad.
 
+## My Test Scenario
 
-#how did I resolve it?
-I used VS code to open README.md, then I 'Accepted Both Changes' option to keep both versions of the line and remove conflict. After saving the files, I went to GitHub Desktop and clicked "Continue Merge", completing the merge.
+I created a simple Python file called `bisect_demo.py` with a multiplication function. I had an earlier commit where the multiplication function worked correctly.
 
-#what did I learn?
+The known good commit was:
 
-Merge conflict is caused when two branches change the same line of a file.
-Conflict markers tell what's different between two versions.
-Clear communication with tea members helps us to know who is working on what. 
+`923bea4` - Add working multiplication program
 
-Git Pull Request Reflection
+I later introduced a bug in the multiplication function. The bad commit was:
 
-Why are Pull Requests important in a team workflow?
-Pull Requests let developers to review code beforehand it is merged into the main branch. They inspire collaboration, benefit catch bugs early, recover code quality, then provide a history of why changes were built.
+`752c6b8` - Introduce bug in multiply function
 
-What makes a well-structured Pull Request?
-A good Pull Request has a pure title, a short description of the changes, small, motivated commits, plus clarifies the commitment of the work. It should be informal for reviewers to recognise plus test.
+I ran:
 
-What did you learn from reviewing an open-source Pull Request?
-I studied that code assessments include more than examination whether code works. Reviewers argue design decisions, coding style, readability, testing, along with potential improvements earlier positive changes. This collaborative process benefits uphold high-quality software.
+`git bisect start`
 
+Then I marked the bad commit:
 
-Writing Meaningful Commit Messages
+`git bisect bad 752c6b8`
 
-What makes a good commit message?
-A good commit message is short, clear, then describes what was changed. It should focus on the purpose of the change rather than explaining every implementation detail.
+Then I marked the known working commit:
 
-How does a clear commit message help in team collaboration?
-Clear commit messages make it easier for team members to recognise project history, review changes, identify bugs, besides track the purpose of each commit.
+`git bisect good 923bea4`
 
-How can poor commit messages cause issues later?
-Poor commit messages such as "fixed stuff" or "update" make it challenging to know what was changed. This slows debugging, code reviews, plus future upholding as developers must review the code in its place of sympathetic the history from the commit messages.
+Git bisect compared the commits and returned:
 
+`752c6b8461390953d43f930177829c5484c7aff5 is the first bad commit`
 
-Git Bisect Reflection
+This confirmed that the commit "Introduce bug in multiply function" introduced the problem.
 
-What does git bisect do?
-Git bisect is a debugging tool that practises binary search to recognise the commit that introduced a bug. In its place of checking every commit manually, Git automatically tapers down the search.
+After finishing the test, I used:
 
-When would you use it in a real-world debugging situation?
-I would custom git bisect when a project that previously worked starts failing after many commits. It helps quickly identify the exact commit that introduced the problem.
+`git bisect reset`
 
-How does it compare to manually reviewing commits?
-Git bisect is considerably faster plus more able because it performs a binary search through the commit history. Manual checking becomes slow plus difficult in projects with various commits.
+to return the repository to its normal state.
 
+## When would I use git bisect?
 
-Advanced Git Commands Reflection
+I would use git bisect when something that previously worked suddenly stops working and I do not know which commit caused it. This would be useful in a real project where many changes have been committed and manually checking every commit would take a long time.
 
-What does each command do?
+## Git Bisect vs Manual Commit Review
 
-**git checkout <branch> -- <file>** reestablishes a file from another branch or commit.
- **git cherry-pick <commit>** concerns a specific commit from another branch minus merging the whole branch.
-**git log** exhibits the commit history of the repository.
-**git blame <file>** illustrates which commit and author last modified separately line in a file.
+Before learning git bisect, I would probably look through commits one by one and try to find where the code changed. This can become slow when there are many commits.
 
-When would you use these commands in a real project?
-These commands are suitable when working with numerous developers. I can reestablish unintentionally modified files, copy a useful commit between branches, inspect project history, besides identify who made explicit code changes.
-
-What surprised you while testing these commands?
-I discovered `git cherry-pick` especially useful since it allows moving one one commit in its place of integration an entire branch. I also start `git blame` cooperative for understanding the history of specific lines of code.
-
-Summary
-
-This Pull Request proves Git branching plus teamwork practices as part of the Focus Bear onboarding tasks.
-
-Changes:
-
-1.	Added a branching practice file.
-2.	Established creating along with working on a feature branch.
-3.	Verified that transformations were remote from the main branch.
-4.	Additional a reflection about branching besides team collaboration to `git_understanding.md`.
-
-Purpose:
-
-This PR was shaped to whole the Branching & Team Collaboration onboarding exercise plus progress my understanding of feature branches besides collaborative Git workflows.
-
-
-Git Concept: Staging vs. Committing
-
-Difference Between Staging and Committing
-Staging is the process of choosing which alterations will be encompassed in the next commit. A commit forever records the staged changes in the Git history with a commit message.
-
-Why does Git separate these two steps?
-Parting staging from promising agrees developers to wisely choose which alterations fit together. This helps make smaller, more expressive commits besides avoids containing unfinished work.
-When would you stage changes without committing?
-I would stage modifications when revising my work before making a commit or when I only want to pledge specific files while continuing to work on others.
-
+Git bisect is more efficient because it reduces the number of commits that need to be tested. I found it useful because Git was able to identify the exact commit that introduced the bug instead of me manually searching through the whole commit history.

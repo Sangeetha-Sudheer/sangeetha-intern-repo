@@ -256,40 +256,66 @@ Refactoring stimulated the repeated logic into a returnable function. This types
 
 ---
 
-Handling Errors & Edge Cases
+## Handling Errors & Edge Cases
 
-Why Error Handling Matters
-Error handling marks software more dependable by avoiding crashes then ensuring the program replies suitably to unexpected or invalid input. Handling edge cases also improves the user experience and makes the code easier to maintain.
+### Why Error Handling Matters
 
-What are Guard Clauses?
-Guard clauses are early checks that directly exit a function when invalid conditions are noticed. They decrease nesting plus make code easier to read.
+Error handling makes software more reliable because it prevents unexpected inputs from causing crashes or incorrect behaviour. It also gives users and developers clearer information about what went wrong.
 
-Example
-Before Refactoring:
+### Guard Clauses
+
+Guard clauses check invalid conditions at the beginning of a function and stop the function early. This keeps the main logic easier to read and prevents invalid data from continuing through the program.
+
+### Function I Refactored
+
+I used the `process_order(items, customer_email)` function from my repository.
+
+#### Original Function
+
 ```python
-def divide(a, b):
-    return a / b
-```
+def process_order(items, customer_email):
+    total = calculate_order_total(items)
+    discounted_total = apply_discount(total)
+    send_receipt(customer_email, discounted_total)
 
-This function crashes if `b` is zero.
-After Refactoring:
-```python
-def divide(a, b):
-    if b == 0:
-        raise ValueError("The denominator cannot be zero.")
+    return discounted_total
 
-    return a / b
-```
+###Refactored Function
 
-The function now validates the input before executing the calculation.
+def process_order(items, customer_email):
+    if not items:
+        raise ValueError("Order must contain at least one item.")
 
-Reflection
-What was the issue with the original code?
-The original function assumed all inputs were valid. If the denominator was zero, the program would grow an unexpected exception besides terminate. Alike issues can happen when inputs are missing, invalid, or outside the expected range.
+    if not customer_email or "@" not in customer_email:
+        raise ValueError("A valid customer email is required.")
 
-How does handling errors improve reliability?
-Proper error handling marks software stronger by preventing unforeseen failures, offering meaningful error messages, and letting developers or users to classify problems more effortlessly. It also expands maintainability since invalid inputs are handled constantly.
+    total = calculate_order_total(items)
+    discounted_total = apply_discount(total)
+    send_receipt(customer_email, discounted_total)
 
+    return discounted_total
+
+### Problems and Edge Cases
+
+The original `process_order(items, customer_email)` function assumes that all inputs are valid.
+
+Problems I identified:
+- `items` could be empty or `None`.
+- `customer_email` could be empty.
+- An invalid email address could be passed to the function.
+- The function starts processing the order without validating these inputs first.
+
+The refactored function uses guard clauses to validate the inputs before processing the order.
+
+### Reflection
+
+The original function did not handle invalid or missing inputs before calculating the order total and sending the receipt. This could cause unexpected errors or allow the function to continue with invalid data.
+
+I added guard clauses at the beginning of the function. The first check ensures that the order contains at least one item. The second check ensures that a customer email is provided and contains an `@` symbol. If either condition is invalid, the function raises a clear `ValueError` instead of continuing.
+
+Handling these errors improves reliability because invalid inputs are detected early and the caller receives a meaningful error message. It also keeps the normal processing logic simple and easier to understand.
+
+I committed and pushed these changes to GitHub.
 
 Refactoring Code for Simplicity
 

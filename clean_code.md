@@ -120,42 +120,36 @@ Inadequately named variables can make code demanding to understand, debug, revie
 How did refactoring improve code readability?
 The refactored version kinds the determination of every value then operation clear. The name `calculate_rectangle_area` directly explains what the function does, though names such as `rectangle_length`, `rectangle_width`, plus `rectangle_area` obviously describe the saved values. The code can now be unspoken exclusive of requiring additional comments.
 
+4.3
 Writing Small, Focused Functions:
 
-Best Practices:
-Small functions should:
-- Complete one clear task only.
-- Have expressive names.
-- Be easy to test independently.
-- Avoid unnecessary complexity.
-- Be returnable in changed parts of the program.
+### Writing Small, Focused Functions
 
-Example of a Large Function:
+Small functions are easier to understand, test, reuse, and maintain because each function has one clear responsibility.
+
+### Original Function
+
+I started with this `process_order` function, which performs several different tasks inside one function:
+
 ```python
 def process_order(customer, items):
     total = 0
+
     for item in items:
         total += item["price"]
+
     print("Customer:", customer)
     print("Items:", len(items))
     print("Total:", total)
+
     if total > 100:
         discount = total * 0.1
         total -= discount
+
     print("Final Price:", total)
-```
 
-Problems:
+##Refactored Version
 
-- Calculates the total.
-- Prints customer details.
-- Applies discounts.
-- Displays the result.
-
-It performs numerous diverse responsibilities, making it tougher to test plus maintain.
-
-Refactored Version:
-```python
 def calculate_total(items):
     return sum(item["price"] for item in items)
 
@@ -172,22 +166,25 @@ def display_order(customer, items, total):
     print("Final Price:", total)
 
 
-total = calculate_total(items)
-total = apply_discount(total)
-display_order(customer, items, total)
-```
+def process_order(customer, items):
+    total = calculate_total(items)
+    total = apply_discount(total)
+    display_order(customer, items, total)
 
-Reflection:
+What Each Function Does
+calculate_total() has one responsibility: calculating the total price of the items.
+apply_discount() handles the discount rule and returns the final total.
+display_order() is responsible only for displaying the order information.
+process_order() coordinates the smaller functions to complete the overall order process.
+Reflection
 
-Why is breaking down functions helpful?
+The original function was harder to maintain because it handled calculation, discount logic, and output in one place. If I needed to change the discount rule or the way order information was displayed, I would have to modify the same function and risk affecting unrelated behaviour.
 
-Breaking large functions to smaller ones creates code easier to understand, uphold, test, besides reuse. Each function has one accountability, making debugging much easier.
+After refactoring, I found the code easier to read because each function name clearly describes its purpose. The main process_order() function now shows the overall workflow without containing all of the implementation details.
 
-How did refactoring improve the structure of the code?
-The refactored version splits calculation, discount logic, then display into liberated functions. This improves legibility, decreases complexity, and permits each function to be improved exclusive of distressing the others.
+Splitting the function also improves testing. I can test calculate_total() independently with different item lists and test apply_discount() separately with totals above and below 100. This makes it easier for me to identify which part of the code is causing a problem if a test fails.
 
- Commenting & Documentation
-
+Commentig & Documetation
 Best Practices
 1.	Write comments that tells *why* the code exists, not *what* it does.
 2.	Keep comments up to date when code changes.

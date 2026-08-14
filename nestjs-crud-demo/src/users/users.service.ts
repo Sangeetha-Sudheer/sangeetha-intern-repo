@@ -1,10 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from './user.entity';
 
 export interface CreateUserData {
   name: string;
@@ -13,22 +10,17 @@ export interface CreateUserData {
 
 @Injectable()
 export class UsersService {
-  private users: User[] = [
-    {
-      id: 1,
-      name: 'Sangeetha',
-      email: 'sangeetha@example.com',
-    },
-  ];
+  constructor(
+    @InjectRepository(User)
+    private readonly usersRepository: Repository<User>,
+  ) {}
 
-  private nextId = 2;
-
-  findAll(): User[] {
-    return this.users;
+  findAll(): Promise<User[]> {
+    return this.usersRepository.find();
   }
 
-  findOne(id: number): User {
-    const user = this.users.find((item) => item.id === id);
+  async findOne(id: number): Promise<User> {
+    const user = await this.usersRepository.findOneBy({ id });
 
     if (!user) {
       throw new NotFoundException(`User with ID ${id} was not found`);
@@ -37,37 +29,29 @@ export class UsersService {
     return user;
   }
 
-  create(data: CreateUserData): User {
-    const newUser: User = {
-      id: this.nextId,
-      name: data.name,
-      email: data.email,
-    };
-
-    this.nextId += 1;
-    this.users.push(newUser);
-
-    return newUser;
+  async create(data: CreateUserData): Promise<User> {
+    const user = this.usersRepository.create(data);
+    return this.usersRepository.save(user);
   }
 
-  update(id: number, data: Partial<CreateUserData>): User {
-    const user = this.findOne(id);
+  async update(
+    id: number,
+    data: Partial<CreateUserData>,
+  ): Promise<User> {
+    const user = await this.usersRepository.preload({
+      id,
+      ...data,
+    });
 
-    if (data.name !== undefined) {
-      user.name = data.name;
+    if (!user) {
+      throw new NotFoundException(`User with ID ${id} was not found`);
     }
 
-    if (data.email !== undefined) {
-      user.email = data.email;
-    }
-
-    return user;
+    return this.usersRepository.save(user);
   }
 
-  remove(id: number): User {
-    const user = this.findOne(id);
-    this.users = this.users.filter((item) => item.id !== id);
-
-    return user;
+  async remove(id: number): Promise<User> {
+    const user = await this.findOne(id);
+    return this.usersRepository.remove(user);
   }
 }

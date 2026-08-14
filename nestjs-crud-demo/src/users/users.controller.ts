@@ -1,3 +1,6 @@
+import { Roles } from '../auth/roles.decorator';
+import { RolesGuard } from '../auth/roles.guard';
+import { DemoAuthGuard } from '../auth/demo-auth.guard';
 import {
   Body,
   Controller,
@@ -7,6 +10,7 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import type { CreateUserData } from './users.service';
@@ -42,5 +46,14 @@ export class UsersController {
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number): Promise<User> {
     return this.usersService.remove(id);
+  }
+  @Get('admin/dashboard')
+  @UseGuards(DemoAuthGuard, RolesGuard)
+  @Roles('admin')
+  adminDashboard() {
+    return {
+      message: 'Admin access granted',
+      role: 'admin',
+    };
   }
 }

@@ -456,45 +456,100 @@ Unit tests help keep code clean because they make future changes safer. If I ref
 
 I created the test file, ran the tests successfully, and will commit and push the changes to GitHub.
 
-Code Formatting & Style Guides
-Why Is Consistent Code Style Important?
-Consistent code formatting marks software calmer to read, understand, then preserve. When all developer obeys the same style guide, code assessments become faster, bugs are calmer to classify, plus team collaboration recovers. A reliable style also decreases needless formatting discussions so developers can effort on functionality.
+## 4.10 Code Formatting & Style Guides
 
- Airbnb JavaScript Style Guide
-The Airbnb JavaScript Style Guide is one of the maximum widely old coding standards for JavaScript projects. It offers suggestions for:
-- Naming variables and functions obviously.
-- Reliable indentation plus spacing.
-- Using `const` and `let` appropriately.
-- Systematising imports.
-- Writing readable functions plus classes.
-- Following modern JavaScript best practices.
+### Why Consistent Code Style Matters
 
-ESLint and Prettier
-ESLint
-ESLint is a static analysis tool that detects coding issues such as:
-- Unused variables.
-- Missing semicolons (depending on configuration).
-- Incorrect variable declarations.
-- Potential bugs.
-- Violations of coding standards.
+Consistent formatting makes code easier to read, review, and maintain. When developers follow the same style rules, the codebase becomes more predictable and easier to work with.
 
-Prettier
-Prettier automatically formats code by applying consistent:
+I reviewed the Airbnb JavaScript Style Guide and focused on practices such as:
+- using meaningful variable and function names
+- keeping indentation and spacing consistent
+- using `const` and `let` appropriately
+- keeping imports organised
+- writing readable functions and classes
 
-- Indentation.
-- Line spacing.
-- Bracket placement.
-- Quote style.
-- Line wrapping.
+### ESLint and Prettier Setup
 
-Using ESLint together with Prettier helps maintain a clean and consistent codebase.
+I used the existing `nestjs-crud-demo` project in my repository.
+
+The tools were already installed in the project.
+
+I confirmed the installed versions using:
+
+```bash
+npx eslint --version
+npx prettier --version
+The versions were:
+
+ESLint: v9.39.5
+Prettier: 3.9.6
+
+The project also already contained an eslint.config.mjs configuration file.
+
+Running ESLint
+
+I ran ESLint on the source code using:
+npx eslint "src/**/*.{ts,js}"
+The first ESLint run reported:
+
+2 problems (1 error, 1 warning)
+
+The issues were:
+
+src/main.ts
+Warning: a Promise was not awaited or explicitly handled.
+Rule: @typescript-eslint/no-floating-promises
+src/users/users.module.ts
+Error: Prettier expected a comma to be inserted.
+Rule: prettier/prettier
+
+Running Prettier
+
+I checked the formatting with:
+
+npx prettier --check "src/**/*.{ts,js,json}"
+
+Prettier reported:
+
+[warn] src/users/users.module.ts
+[warn] Code style issues found in the above file.
+
+I fixed the formatting issue using:
+
+npx prettier --write "src/users/users.module.ts"
+
+After formatting, I ran the check again:
+
+npx prettier --check "src/**/*.{ts,js,json}"
+
+The result was:
+
+All matched files use Prettier code style!
+ESLint Result After Formatting
+
+I ran ESLint again:
+
+npx eslint "src/**/*.{ts,js}"
+
+The result became:
+
+1 problem (0 errors, 1 warning)
+
+The formatting error in src/users/users.module.ts was fixed. The remaining warning was in src/main.ts for an unhandled Promise.
 
 Reflection
 Why is code formatting important?
-Codes formatting recovers readability, makes collaboration calmer, and helps uphold a consistent coding standard past a project. Well-formatted code is simpler to review, debug, al well as maintain.
+
+Code formatting is important because it keeps the codebase consistent and easier to understand. It also makes code reviews simpler because developers can focus on the logic instead of inconsistent spacing or formatting.
 
 What issues did the linter detect?
-Linters usually detect idle variables, changeable formatting, missing or unnecessary syntax, plus code that does not follow the project's style guide. These warnings help classify problems before the code is complex.
+
+ESLint detected two issues during the first run. One was a formatting error in src/users/users.module.ts, where a comma was missing according to the Prettier rules. The other was a warning in src/main.ts because a Promise was not awaited or explicitly handled.
+
+After running Prettier, the formatting error was fixed and ESLint reported only the remaining Promise warning.
 
 Did formatting make the code easier to read?
-Yes. Constant formatting better readability by creating the code more ordered and predictable. It also reduced visual clutter, permitting the logic of the program to stand out more obviously.
+
+Yes. Formatting made the code more consistent and easier to scan. Prettier automatically corrected the formatting in src/users/users.module.ts, which removed the style error and made the file follow the same formatting rules as the rest of the project.
+

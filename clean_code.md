@@ -184,32 +184,53 @@ After refactoring, I found the code easier to read because each function name cl
 
 Splitting the function also improves testing. I can test calculate_total() independently with different item lists and test apply_discount() separately with totals above and below 100. This makes it easier for me to identify which part of the code is causing a problem if a test fails.
 
-Commentig & Documetation
-Best Practices
-1.	Write comments that tells *why* the code exists, not *what* it does.
-2.	Keep comments up to date when code changes.
-3.	Use expressive function besides variable names to decrease the need for comments.
-4.	File public functions, APIs, besides complex logic.
+## 4.5 Commenting & Documentation
 
-Example of Poor Comment:
+### Best Practices
+
+Good comments should explain why a piece of code exists or provide context that is not obvious from the code itself.
+
+Comments should:
+
+- Be clear and concise.
+- Explain important decisions or unusual behaviour.
+- Be kept up to date when the code changes.
+- Avoid repeating information that is already obvious from the code.
+- Be used when extra context would help another developer understand the code.
+
+### Poorly Commented Code
+
 ```python
 # Add 1 to x
 x = x + 1
 
+# Check if x is greater than 10
+if x > 10:
+    # Print big
+    print("Big")
+Improved Version
 
- Commenting & Documentation
+retry_count = retry_count + 1
 
-Best Practices
-1.	Write comments that tells *why* the code exists, not *what* it does.
-2.	Keep comments up to date when code changes.
-3.	Use expressive function besides variable names to decrease the need for comments.
-4.	File public functions, APIs, besides complex logic.
+# Stop retrying after the maximum number of attempts has been reached.
+if retry_count > 10:
+    print("Maximum retry attempts reached")
+The improved version uses a meaningful variable name and only includes a comment where extra context is useful. The comment explains the reason for the condition instead of repeating the code.
 
-Example of Poor Comment:
-```python
-# Add 1 to x
-x = x + 1
+Reflection
+When should I add comments?
 
+I should add comments when the reason behind a piece of code is not obvious from the code itself. Comments are useful for explaining business rules, unusual decisions, workarounds, or behaviour that another developer may not understand immediately.
+
+I should also use documentation for public functions or APIs when other developers need to understand how to use them.
+
+When should I improve the code instead of adding comments?
+
+I should improve the code when a comment is only being used to explain confusing variable names or complicated logic. In those situations, it is better to use clearer names, smaller functions, or simpler control flow.
+
+For example, changing x to retry_count makes the purpose of the variable much clearer without needing a comment.
+
+This task showed me that comments should support readable code, not replace it.
 
 
 ---

@@ -339,19 +339,15 @@ Handling these errors improves reliability because invalid inputs are detected e
 
 I committed and pushed these changes to GitHub.
 
-Refactoring Code for Simplicity
+## 4.7 Refactoring Code for Simplicity
 
-Common Refactoring Techniques
-Some common refactoring techniques include:
-- Getting repeated code into reusable functions.
-- Renaming variables plus functions to mend readability.
-- Reduction deeply nested `if` statements by means of guard clauses.
-- Breaking large functions into smaller, focused functions.
-- Eliminating duplicate or needless code.
-- Streamlining complex conditional logic.
+### Refactoring Technique
 
-Example
-Before Refactoring
+One useful refactoring technique is simplifying nested conditional logic. Deeply nested `if` statements can make code harder to read because the developer has to follow several levels of indentation to understand the result.
+
+I refactored the following `check_discount()` function to make its control flow simpler.
+
+### Original Code
 
 ```python
 def check_discount(age, is_student):
@@ -362,30 +358,43 @@ def check_discount(age, is_student):
             return 15
         else:
             return 0
-```
 
-After Refactoring
-```python
+What Made the Original Code Complex?
+
+The original function contains unnecessary nested if and else blocks. After the first condition returns a value, the remaining logic does not need to be inside an else.
+
+The extra nesting makes the function longer and requires more effort to follow the control flow.
+
+Refactored Code
 def check_discount(age, is_student):
     if age >= 65:
         return 20
 
+
     if is_student:
         return 15
 
-    return 0
-```
 
+    return 0
+What I Changed
+
+I removed the unnecessary else blocks and used early returns.
+
+The behaviour of the function remains the same:
+
+Customers aged 65 or older receive a 20% discount.
+Students receive a 15% discount.
+Everyone else receives no discount.
 Reflection
 What made the original code complex?
-The original function controlled avoidable nested `if` statements, making the logic harder to read. The extra indentation reduced readability without adding any benefit.
+
+I found the original function harder to read because the second condition was nested inside an else block even though the first condition already returned a value. The additional indentation made a simple decision structure look more complicated than necessary.
 
 How did refactoring improve it?
-The refactored version consumptions early returns to shorten the control flow. The code is simpler to understand, involves less nesting, besides is simpler to uphold while producing the similar result.
+
+After refactoring, the function has a flatter control flow and fewer unnecessary branches. I can now read each condition from top to bottom without following nested blocks. The code is shorter, easier to understand, and easier to modify or test while keeping the same behaviour.
 
 
-
-4.9
 
 ## 4.9 Writing Unit Tests for Clean Code
 

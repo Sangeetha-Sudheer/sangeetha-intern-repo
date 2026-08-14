@@ -59,45 +59,41 @@ print(total)
 - The indentation and spacing are consistent.
 - The code is easier to understand and maintain.
 
-Naming Variables and Functions
+4.2
+## 4.2 Naming Variables & Functions
 
-Best Practices:
-Good variable plus function names should:
-- Obviously define their commitment.
-- Use full plus meaningful words instead of unclear abbreviations.
-- Track the naming conventions of the programming language.
-- Custom verbs for functions as functions perform actions.
-- Use nouns for variables as variables store information.
-- Evade names such as `x`, `data`, `temp`, or `stuff` unless their sense is obvious.
-- Continue to be consistent during the project.
+### Best Practices
 
-Example of Unclear Naming:
+Good variable and function names should clearly describe their purpose.
+
+Useful naming practices include:
+
+- Use meaningful and descriptive names.
+- Avoid unclear names such as `x`, `data`, `temp`, or `stuff` unless the meaning is obvious.
+- Use nouns for variables because they represent data.
+- Use verbs for functions because functions perform actions.
+- Follow the naming conventions of the programming language.
+- Keep naming consistent throughout the project.
+
+### Unclear Example
 
 ```python
 def calc(a, b):
     c = a * b
     return c
 
-
 x = 10
 y = 5
 z = calc(x, y)
 
 print(z)
-```
+This example is difficult to understand because the names do not explain what the values represent. The function name calc also does not explain what calculation is being performed.
 
-Problems with this code:
-- The function name `calc` does not clarify what calculation is carried out.
-- The parameters `a` and `b` do not describe what they signify.
-- The variables `x`, `y`, and `z` do not communicate their purpose.
-- Additional developer would need to review the function judiciously to understand the code.
+Refactored Version
 
-Refactored Version:
-```python
 def calculate_rectangle_area(length, width):
     area = length * width
     return area
-
 
 rectangle_length = 10
 rectangle_width = 5
@@ -107,18 +103,26 @@ rectangle_area = calculate_rectangle_area(
 )
 
 print(rectangle_area)
-```
+Why the New Names Are Better
 
-Reflection:
+The new names make the purpose of the code clear without needing extra comments.
 
+calculate_rectangle_area() clearly explains what the function does.
+length and width explain what the parameters represent.
+rectangle_length and rectangle_width show what the values belong to.
+rectangle_area clearly describes the result.
+Reflection
 What makes a good variable or function name?
-A good name obviously transfers the determination of the variable or function. Variable names must describe the information actuality stored, while function names should define the action being performed. Names need to be specific, readable, besides reliable with the project's naming conventions.
+
+A good name clearly explains the purpose of the variable or function. It should be descriptive enough that another developer can understand the code without needing to guess what each value means.
 
 What issues can arise from poorly named variables?
-Inadequately named variables can make code demanding to understand, debug, review, besides maintain. Developers may misinterpret the purpose of a value or unintentionally use it erroneously. This can growth the likelihood of bugs and make future changes take longer.
+
+Poorly named variables make code harder to read, debug, review, and maintain. Developers may misunderstand the purpose of a value or spend extra time tracing how it is used.
 
 How did refactoring improve code readability?
-The refactored version kinds the determination of every value then operation clear. The name `calculate_rectangle_area` directly explains what the function does, though names such as `rectangle_length`, `rectangle_width`, plus `rectangle_area` obviously describe the saved values. The code can now be unspoken exclusive of requiring additional comments.
+
+Refactoring improved readability because the new names explain the purpose of each value and operation. I can now understand that the function calculates the area of a rectangle without reading through the implementation in detail.
 
 4.3
 Writing Small, Focused Functions:

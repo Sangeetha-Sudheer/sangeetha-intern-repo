@@ -361,57 +361,75 @@ The refactored version consumptions early returns to shorten the control flow. T
 
 
 4.9
-Writing Unit Tests for Clean Code
 
-Why Are Unit Tests Important?
-Unit tests prove that distinct functions or mechanisms behave as expected. They help developers sense bugs early, confirm code alterations do not present regressions, besides make refactoring safer. Dependable unit tests progress confidence in the codebase plus support long-term maintainability.
+## 4.9 Writing Unit Tests for Clean Code
 
-Testing Framework
-For Python projects, a common testing framework is **PyTest**. It is extensively used as it has simple syntax, provides full test reports, besides supports fixtures, parameterized tests, plus plugins.
-Example Function
+### Why Unit Tests Are Important
+
+Unit tests verify that individual functions behave as expected. They help detect bugs early, make refactoring safer, and give developers confidence that existing behaviour still works after code changes.
+
+### Testing Framework
+
+I used **pytest** for this task because it has simple syntax and makes it easy to write and run Python unit tests.
+
+### Function Tested
+
+I tested the `calculate_total(items)` function.
+
+The function calculates the total price of all items in an order.
+
+### Test File
+
+I created `test_clean_code.py` with three tests:
+
+- A test with multiple items.
+- A test with one item.
+- A test with an empty list.
+
 ```python
-def divide(a, b):
-    if b == 0:
-        raise ValueError("The denominator cannot be zero.")
-
-    return a / b
-```
-
-Example Unit Tests
-
-```python
-import pytest
-
-def divide(a, b):
-    if b == 0:
-        raise ValueError("The denominator cannot be zero.")
-
-    return a / b
-
-def test_divide_positive_numbers():
-    assert divide(10, 2) == 5
-
-def test_divide_negative_numbers():
-    assert divide(-8, 2) == -4
-
-def test_divide_zero():
-    assert divide(0, 5) == 0
+from order_utils import calculate_total
 
 
-def test_divide_by_zero():
-    with pytest.raises(ValueError):
-        divide(10, 0)
-```
+def test_calculate_total_multiple_items():
+    items = [
+        {"price": 10},
+        {"price": 20},
+        {"price": 30}
+    ]
 
-These tests verify normal behaviour, edge cases, and error handling.
+    assert calculate_total(items) == 60
+
+
+def test_calculate_total_single_item():
+    items = [
+        {"price": 25}
+    ]
+
+    assert calculate_total(items) == 25
+
+
+def test_calculate_total_empty_list():
+    items = []
+
+    assert calculate_total(items) == 0
+
+Test Result
+
+I ran:
+
+python3 -m pytest test_clean_code.py
+
+All three tests passed successfully.
 
 Reflection
-How do unit tests help keep code clean?
-Unit tests cheer developers to write slighter, engrossed functions that are simpler to test. They also offer confidence once refactoring because any unintentional changes are speedily detected.
 
-What issues did you find while testing?
-Testing highlighted the status of control invalid input, mainly division by zero. Writing tests also strengthened the need to reflect edge cases besides ensure functions answer with clear error messages in its place of failing unpredictably.
+Writing unit tests helped me check the behaviour of calculate_total() independently from the rest of the program. Testing different inputs made it easier to confirm that the function works correctly for multiple items, one item, and an empty list.
 
+The empty-list test was an important edge case. It confirmed that the function returns 0 rather than failing when there are no items.
+
+Unit tests help keep code clean because they make future changes safer. If I refactor the function later, I can rerun the tests to check that its behaviour has not changed unexpectedly.
+
+I created the test file, ran the tests successfully, and will commit and push the changes to GitHub.
 
 Code Formatting & Style Guides
 Why Is Consistent Code Style Important?

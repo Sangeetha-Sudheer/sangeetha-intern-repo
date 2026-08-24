@@ -1,3 +1,4 @@
+import { LoggerModule } from 'nestjs-pino';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -30,6 +31,17 @@ import { JobsModule } from './jobs/jobs.module';
           .valid('development', 'test', 'production')
           .default('development'),
       }),
+    }),
+    LoggerModule.forRoot({
+      pinoHttp: {
+        level: 'info',
+        transport: {
+          target: 'pino-pretty',
+          options: {
+            singleLine: true,
+          },
+        },
+      },
     }),
 
     TypeOrmModule.forRootAsync({

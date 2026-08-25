@@ -1,3 +1,5 @@
+import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 import { LoggerModule } from 'nestjs-pino';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -43,7 +45,12 @@ import { JobsModule } from './jobs/jobs.module';
         },
       },
     }),
-
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000,
+        limit: 5,
+       },
+    ]),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
@@ -73,8 +80,14 @@ import { JobsModule } from './jobs/jobs.module';
 
   controllers: [AppController],
 
-  providers: [AppService],
-})
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+     },
+   ],
+   })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(RequestLoggerMiddleware).forRoutes('*');

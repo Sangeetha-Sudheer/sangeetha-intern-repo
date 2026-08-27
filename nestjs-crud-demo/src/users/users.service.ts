@@ -6,6 +6,7 @@ import { User } from './user.entity';
 export interface CreateUserData {
   name: string;
   email: string;
+  privateNote?: string;
 }
 
 @Injectable()

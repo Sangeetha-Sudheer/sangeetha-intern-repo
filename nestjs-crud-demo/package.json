@@ -39,7 +39,8 @@
     "pino-http": "^11.0.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.26"
+    "typeorm": "^0.3.26",
+    "typeorm-encrypted": "^0.8.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

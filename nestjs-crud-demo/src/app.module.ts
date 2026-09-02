@@ -1,18 +1,23 @@
-import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
-import { APP_GUARD } from '@nestjs/core';
-import { LoggerModule } from 'nestjs-pino';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bullmq';
+import { LoggerModule } from 'nestjs-pino';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
-import { RequestLoggerMiddleware } from './common/middleware/request-logger.middleware';
+
 import { JobsModule } from './jobs/jobs.module';
+
+import { RequestLoggerMiddleware } from './common/middleware/request-logger.middleware';
+
+import { Auth0Module } from './auth0/auth0.module';
 
 @Module({
   imports: [
@@ -32,8 +37,12 @@ import { JobsModule } from './jobs/jobs.module';
         NODE_ENV: Joi.string()
           .valid('development', 'test', 'production')
           .default('development'),
+
+        AUTH0_DOMAIN: Joi.string().optional(),
+        AUTH0_AUDIENCE: Joi.string().optional(),
       }),
     }),
+
     LoggerModule.forRoot({
       pinoHttp: {
         level: 'info',
@@ -45,12 +54,14 @@ import { JobsModule } from './jobs/jobs.module';
         },
       },
     }),
+
     ThrottlerModule.forRoot([
       {
         ttl: 60000,
         limit: 5,
-       },
+      },
     ]),
+
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
@@ -76,6 +87,9 @@ import { JobsModule } from './jobs/jobs.module';
 
     UsersModule,
     JobsModule,
+
+    // Auth0 / JWT authentication module
+    Auth0Module,
   ],
 
   controllers: [AppController],
@@ -85,9 +99,9 @@ import { JobsModule } from './jobs/jobs.module';
     {
       provide: APP_GUARD,
       useClass: ThrottlerGuard,
-     },
-   ],
-   })
+    },
+  ],
+})
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(RequestLoggerMiddleware).forRoutes('*');

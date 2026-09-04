@@ -1,7 +1,16 @@
 module.exports = {
   testEnvironment: 'jsdom',
+
   transform: {
-    '^.+\\.(t|j)sx?$': 'babel-jest',
+    '^.+\\.tsx$': 'babel-jest',
+    '^.+\\.ts$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.json',
+      },
+    ],
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
+
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
 };

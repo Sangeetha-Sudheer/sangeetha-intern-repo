@@ -9,6 +9,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Req,
   Put,
   UseGuards,
 } from '@nestjs/common';
@@ -19,6 +20,16 @@ import { User } from './user.entity';
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
+
+  @Get('debug/request')
+  inspectRequest(@Req() req: any) {
+    console.log('Request headers:', req.headers);
+
+    return {
+      message: 'Request inspected',
+      headers: req.headers,
+    };
+   }
 
   @Get()
   findAll(): Promise<User[]> {

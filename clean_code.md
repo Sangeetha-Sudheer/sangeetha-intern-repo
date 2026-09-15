@@ -124,69 +124,94 @@ How did refactoring improve code readability?
 
 Refactoring improved readability because the new names explain the purpose of each value and operation. I can now understand that the function calculates the area of a rectangle without reading through the implementation in detail.
 
-4.3
-Writing Small, Focused Functions:
+## 4.3 Writing Small, Focused Functions
 
-### Writing Small, Focused Functions
+### Original Version
 
-Small functions are easier to understand, test, reuse, and maintain because each function has one clear responsibility.
-
-### Original Function
-
-I started with this `process_order` function, which performs several different tasks inside one function:
+The original function handled several responsibilities at once:
 
 ```python
-def process_order(customer, items):
+def process_order(order):
     total = 0
 
-    for item in items:
-        total += item["price"]
+    for item in order["items"]:
+        total += item["price"] * item["quantity"]
 
-    print("Customer:", customer)
-    print("Items:", len(items))
-    print("Total:", total)
+    if order["customer_type"] == "premium":
+        total = total * 0.9
 
-    if total > 100:
-        discount = total * 0.1
-        total -= discount
+    tax = total * 0.1
+    total = total + tax
 
-    print("Final Price:", total)
+    print("Order total:", total)
 
-##Refactored Version
-
-def calculate_total(items):
-    return sum(item["price"] for item in items)
-
-
-def apply_discount(total):
-    if total > 100:
-        return total * 0.9
     return total
+```
+
+### Refactored Version
+
+I split the original function into smaller functions with one clear responsibility each.
+
+```python
+def calculate_subtotal(items):
+    return sum(item["price"] * item["quantity"] for item in items)
 
 
-def display_order(customer, items, total):
-    print("Customer:", customer)
-    print("Items:", len(items))
-    print("Final Price:", total)
+def apply_discount(subtotal, customer_type):
+    if customer_type == "premium":
+        return subtotal * 0.9
+
+    return subtotal
 
 
-def process_order(customer, items):
-    total = calculate_total(items)
-    total = apply_discount(total)
-    display_order(customer, items, total)
+def calculate_tax(amount):
+    return amount * 0.1
 
-What Each Function Does
-calculate_total() has one responsibility: calculating the total price of the items.
-apply_discount() handles the discount rule and returns the final total.
-display_order() is responsible only for displaying the order information.
-process_order() coordinates the smaller functions to complete the overall order process.
-Reflection
 
-The original function was harder to maintain because it handled calculation, discount logic, and output in one place. If I needed to change the discount rule or the way order information was displayed, I would have to modify the same function and risk affecting unrelated behaviour.
+def calculate_total(amount, tax):
+    return amount + tax
 
-After refactoring, I found the code easier to read because each function name clearly describes its purpose. The main process_order() function now shows the overall workflow without containing all of the implementation details.
 
-Splitting the function also improves testing. I can test calculate_total() independently with different item lists and test apply_discount() separately with totals above and below 100. This makes it easier for me to identify which part of the code is causing a problem if a test fails.
+def process_order(order):
+    subtotal = calculate_subtotal(order["items"])
+    discounted_subtotal = apply_discount(
+        subtotal,
+        order["customer_type"],
+    )
+    tax = calculate_tax(discounted_subtotal)
+    total = calculate_total(discounted_subtotal, tax)
+
+    print("Order total:", total)
+
+    return total
+```
+
+### What Each Function Does
+
+- `calculate_subtotal()` calculates the total price of the order items.
+- `apply_discount()` handles the premium customer discount.
+- `calculate_tax()` calculates the tax.
+- `calculate_total()` combines the amount and tax.
+- `process_order()` coordinates the smaller functions.
+
+### Reflection
+
+#### Why was the original function hard to maintain?
+
+The original function was harder to maintain because it handled several responsibilities in one place. If I needed to change the discount, tax, or subtotal calculation, I had to modify the same function.
+
+#### How did splitting it improve testing and readability?
+
+Splitting the logic into smaller functions made the code easier for me to understand and test. I can now test the subtotal, discount, tax, and total calculations separately. The main `process_order()` function is also shorter and easier to read.
+
+### Implementation Evidence
+
+I committed the small-function refactoring example to GitHub.
+
+Commit hash:
+
+`61facff`
+
 
 ## 4.5 Commenting & Documentation
 

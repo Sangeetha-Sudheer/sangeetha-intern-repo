@@ -1,72 +1,77 @@
+# 4.1 Understanding Clean Code Principles
 
-# 4.2 Naming Variables & Functions
+## Clean Code Principles
 
-## Best Practices
+### Simplicity
 
-Clear variable and function names should explain what the code represents or what an operation does.
+Keep code as simple as possible. Simple code is easier to understand, test, and maintain.
 
-Good names should:
+### Readability
 
-- describe the purpose of the value or function;
-- avoid vague names such as `x`, `temp`, or `data` when a clearer name is possible;
-- use consistent naming conventions;
-- make code understandable without unnecessary comments.
+Code should be easy for other developers to read. Meaningful variable names, clear formatting, and a logical structure improve readability.
 
-## Original Example
+### Maintainability
 
-In the original version, the names are too vague:
+Well-structured code is easier to modify, fix, and extend in the future.
 
-```python
-def calc(a, b):
-    x = a * b
-    return x
-```
+### Consistency
 
-The names `calc`, `a`, `b`, and `x` do not clearly explain what the function is calculating.
+Developers should follow consistent naming conventions, formatting rules, and project standards throughout the codebase.
 
-## Refactored Version
+### Efficiency
 
-I renamed the function and variables so their purpose is clear:
+Code should perform its task effectively without unnecessary complexity or premature optimisation.
+
+## Messy Code Example
 
 ```python
-def calculate_order_total(item_price, quantity):
-    order_total = item_price * quantity
-    return order_total
+a=[1,2,3]
+b=0
+
+for i in a:
+    b+=i
+
+print(b)
 ```
 
-The new names are better because:
+### Why is this difficult to read?
 
-- `calculate_order_total` explains what the function does.
-- `item_price` explains what the first value represents.
-- `quantity` explains what the second value represents.
-- `order_total` explains the result of the calculation.
+The code works, but it is harder to understand because:
+
+- the variable names `a`, `b`, and `i` do not clearly describe their purpose;
+- spacing and formatting are inconsistent;
+- another developer has to spend more time working out what the code is doing.
+
+## Cleaner Version
+
+```python
+numbers = [1, 2, 3]
+total = 0
+
+for number in numbers:
+    total += number
+
+print(total)
+```
+
+### Why is this better?
+
+The cleaner version is easier to understand because:
+
+- `numbers` clearly describes the list being processed;
+- `total` clearly explains the value being calculated;
+- `number` is clearer than `i`;
+- indentation and spacing are consistent;
+- the overall structure is easier to read and maintain.
 
 ## Reflection
 
-### What makes a good variable or function name?
+This task helped me understand that clean code is not only about making code work. It is also about making the code easy for other developers to understand and change.
 
-A good name clearly describes the purpose of a variable or function. I should be able to understand what the code does without needing extra explanation.
+Using simple logic, clear names, consistent formatting, and a readable structure makes the code easier to maintain.
 
-Names should be descriptive but not unnecessarily long. They should also follow the naming conventions used by the project.
-
-### What issues can arise from poorly named variables?
-
-Poor names make code harder to understand, debug, review, and maintain.
-
-For example, a variable named `x` does not tell another developer what value it contains. This can cause confusion and make mistakes more likely when the code is changed later.
-
-### How did refactoring improve code readability?
-
-The refactored version is easier for me to understand because the names explain the purpose of each value and operation.
-
-Instead of trying to work out what `calc(a, b)` means, I can immediately understand that `calculate_order_total(item_price, quantity)` calculates the total price for an order.
+The messy example was harder to understand because the variable names were vague and the formatting was inconsistent. After rewriting it, the purpose of each variable became clearer and the code became easier to follow.
 
 ## Implementation Evidence
 
-I updated the naming example and reflection in `clean_code.md`.
-
-Relevant naming-variable/function work can be seen in commit:
-
-`fabe2c2`
-
-
+I updated the clean code principles, messy example, cleaner rewrite, and explanations for Issue #64.
